@@ -16,13 +16,12 @@ int main()
 
 void choiceOfAction(struct Date data1 , struct Date data2)
 {
-
+    int number;
     while(true)
     {
         system("cls");
         cout << "Hello!\n "<<endl;
-        data1=enterDate();
-        data2=enterDate();
+        data1 = enterDate1();
 
         cout << "If you want to: " << endl;
         cout << " exit, please, click <0>\n";
@@ -42,22 +41,29 @@ void choiceOfAction(struct Date data1 , struct Date data2)
         if( enterNumber == '1')
         {
             system("cls");
-            Date newData;
-            newData=addDays (data1 , data2);
+            cout<<"Enter the number of days: ";
+            number = enterNum();
+
+            Date newData=addDays(data1, number);
+
             cout << "New Date: " << newData.year << " " << newData.month << " " << newData.day << endl;
             system("pause");
         }
         if( enterNumber == '2')
         {
             system("cls");
-            //subctractDays (data1, data2);
+            cout<<"Enter the number of days: ";
+            number = enterNum();
+
+            Date newData=subctractDays(data1, number);
+            cout << "New Date: " << newData.year << " " << newData.month << " " << newData.day << endl;
             system("pause");
         }
         if( enterNumber == '3')
         {
             system("cls");
-           //numberOfDays (data1, data2);
-            cout << endl;
+            data2 = enterDate2();
+            cout << numberOfDays (data1, data2)<< endl;
             system("pause");
         }
     }
